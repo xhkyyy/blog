@@ -1,6 +1,7 @@
 package com.java87.demo.stream;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -16,6 +17,11 @@ public class CreateStream {
 
         numbers1.forEach(System.out::println);
         numbers2.forEach(System.out::println);
+
+
+        Stream<String> list = Stream.generate(() -> "abc");
+
+
 
     }
 
