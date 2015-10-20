@@ -1,4 +1,4 @@
-package com.java87.demo;
+package com.java87.demo.lambda;
 
 
 import java.util.Arrays;
