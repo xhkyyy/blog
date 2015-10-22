@@ -10,12 +10,12 @@ import java.util.stream.Collectors;
 /**
  * Created by WY on 2015/10/20.
  */
-public class Lambda_Sort {
+public class LambdaSort {
 
 
     public static void main(String[] args) {
 
-        //1-·½·¨ÒýÓÃ
+        //1-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
        String[] fruits = new String[]{"apple", "ab", "orange", "pear", "ab"};
 
         //Arrays.sort(fruits, (String first, String second) -> Integer.compare(first.length(), second.length()));
@@ -24,12 +24,12 @@ public class Lambda_Sort {
         Arrays.asList(fruits).forEach(System.out::println);
 
 
-        //2-·½·¨ÒýÓÃ
+        //2-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Arrays.sort(fruits, String::compareToIgnoreCase);
 
         Arrays.asList(fruits).forEach(System.out::println);
 
-        //3-¹¹Ôìº¯ÊýÒýÓÃ(Ê¹ÓÃlistÖÐµÄ×Ö·û´®À´¹¹ÔìÒ»¸öInteger)
+        //3-ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Ê¹ï¿½ï¿½listï¿½Ðµï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Integer)
         List<String> nums = new ArrayList<String>(2);
         nums.add("1");
         nums.add("9");
