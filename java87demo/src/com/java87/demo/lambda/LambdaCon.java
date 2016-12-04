@@ -19,9 +19,9 @@ public class LambdaCon {
 
         List<String> fruitStrList = Arrays.asList(new String[]{"apple", "orange", "pear"});
 
-        List<Fruit> fruitList = fruitStrList.stream().map(Fruit::new).collect(Collectors.toList());
+        //List<Fruit> fruitList = fruitStrList.stream().map(Fruit::new).collect(Collectors.toList());
 
-        fruitList.forEach(f -> System.out.println(f.getName()));
+        //fruitList.forEach(f -> System.out.println(f.getName()));
 
 
     }
