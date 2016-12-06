@@ -141,6 +141,28 @@ public class WConcurrentHashMap<K,V> extends AbstractMap<K,V> implements Concurr
 		return null;
 	}
 
+	@SuppressWarnings({"rawtypes", "unchecked"})
+	static int compareComparables(Class<?> kc, Object k, Object x){
+		return (x == null || x.getClass() != kc ? 0 : ((Comparable) k).compareTo(x));
+	}
+
+	@SuppressWarnings("unchecked")
+	static final <K,V> Node<K,V> tabAt(Node<K,V>[] tab, int i){
+		return (Node<K,V>)u.getObjectVolatile(tab, ((long)i << ASHIFT) + ABASE);
+	}
+
+	static final <K,V> boolean casTabAt(Node<K,V>[] tab, int i, Node<K,V> c, Node<K,V> v){
+		return u.compareAndSwapObject(tab, ((long)i << ASHIFT) + ABASE, c, v);
+	}
+
+	static final <K,V> void setTabAt(Node<K,V>[] tab, int i, Node<K,V> v){
+		u.putObjectVolatile(tab, ((long)i << ASHIFT) + ABASE, v);
+	}
+
+
+
+
+
 	static class Segment<K,V> extends ReentrantLock implements Serializable{
 		final float loadFactor;
 		Segment(float lf){
