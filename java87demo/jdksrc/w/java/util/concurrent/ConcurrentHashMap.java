@@ -1013,8 +1013,11 @@ public class ConcurrentHashMap<K,V> extends AbstractMap<K,V>
         int binCount = 0;
         for (Node<K,V>[] tab = table;;) {
             Node<K,V> f; int n, i, fh;
+	    //判断table是否已经初始化
             if (tab == null || (n = tab.length) == 0)
                 tab = initTable();
+
+	    //如果key的键值对不存在，则直接添加
             else if ((f = tabAt(tab, i = (n - 1) & hash)) == null) {
                 if (casTabAt(tab, i, null,
                              new Node<K,V>(hash, key, value, null)))
@@ -1022,14 +1025,19 @@ public class ConcurrentHashMap<K,V> extends AbstractMap<K,V>
             }
             else if ((fh = f.hash) == MOVED)
                 tab = helpTransfer(tab, f);
+
+	    //key发生了冲突
             else {
                 V oldVal = null;
+
+		//key对应的Node
                 synchronized (f) {
                     if (tabAt(tab, i) == f) {
                         if (fh >= 0) {
                             binCount = 1;
                             for (Node<K,V> e = f;; ++binCount) {
                                 K ek;
+				//如果key的绝对的相等，则更新键值对value的值
                                 if (e.hash == hash &&
                                     ((ek = e.key) == key ||
                                      (ek != null && key.equals(ek)))) {
@@ -1038,6 +1046,8 @@ public class ConcurrentHashMap<K,V> extends AbstractMap<K,V>
                                         e.val = value;
                                     break;
                                 }
+
+				//向当前发生冲突的key下添加next节点（链表）
                                 Node<K,V> pred = e;
                                 if ((e = e.next) == null) {
                                     pred.next = new Node<K,V>(hash, key,
