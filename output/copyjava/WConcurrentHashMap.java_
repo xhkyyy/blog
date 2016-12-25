@@ -159,6 +159,40 @@ public class WConcurrentHashMap<K,V> extends AbstractMap<K,V> implements Concurr
 		u.putObjectVolatile(tab, ((long)i << ASHIFT) + ABASE, v);
 	}
 
+	/* ---------------------Fields --------------- */
+	transient volatile Node<K,V>[] table;
+
+	private transient volatile Node<K,V>[] nextTable;
+
+	private transient volatile long baseCount;
+
+	private transient volatile int sizeCtl;
+
+	private transient volatile int transferIndex;
+
+	private transient volatile int cellsBusy;
+
+	private transient volatile CounterCell[] counterCells;
+
+	private transient KeySetView<k,V> keySet;
+
+	private transient ValuesView<K,V> values;
+
+	private transient EntrySetView<k,V> entrySet;
+
+	/* ---------------- Public operations ----------- */
+	public ConcurrenthashMap(){
+	}
+
+	public ConcurrentHashMap(int initialCapacity){
+		if(initialCapacity < 0){
+			throw new IllegalArgumentException();
+		}
+
+		int cap = ((initialCapacity >= (MAXIMUM_CAPACITY >>> 1)) ? MAXINUM_CAPACITY : tableSizeFor(initialCapacity + (initialCapacity >>> 1) + 1));
+		this.sizeCtl = cap;
+	}
+
 
 
 
