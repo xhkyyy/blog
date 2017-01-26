@@ -401,7 +401,7 @@ private static abstract class java_util_Collections extends PersistenceDelegate 
     static final class SingletonSet_PersistenceDelegate extends java_util_Collections {
         protected Expression instantiate(Object oldInstance, Encoder out) {
             Set<?> set = (Set<?>) oldInstance;
-            return new Expression(oldInstance, Collections.class, "singleton", new Object[]{set.iterator().next()});
+            return new Expression(oldInstance, Collections.class, "src/singleton", new Object[]{set.iterator().next()});
         }
     }
 

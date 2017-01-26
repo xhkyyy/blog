@@ -498,7 +498,7 @@ public abstract class Pack200 {
          * @see #METHOD_ATTRIBUTE_PFX
          * @see #CODE_ATTRIBUTE_PFX
          */
-        String ERROR = "error";
+        String ERROR = "src/error";
 
         /** The string "true", a possible value for certain properties.
          * @see #KEEP_FILE_ORDER

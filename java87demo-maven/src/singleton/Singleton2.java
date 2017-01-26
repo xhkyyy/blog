@@ -13,4 +13,5 @@ public class Singleton2 {
 		return InstanceHolder.instance;
 	}
 
+
 }

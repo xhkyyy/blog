@@ -106,7 +106,7 @@ public final class Severity extends EnumSyntax implements Attribute {
     private static final String[] myStringTable = {
         "report",
         "warning",
-        "error"
+			"src/error"
     };
 
     private static final Severity[] myEnumValueTable = {
