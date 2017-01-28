@@ -1,7 +1,7 @@
-package com.java87.demo.staticmethod;
+package demo.staticmethod;
 
 /**
- * ÔÚJava 8ÖÐ£¬¿ÉÒÔÎª½Ó¿ÚÌí¼Ó¾²Ì¬·½·¨
+ * ï¿½ï¿½Java 8ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ó¿ï¿½ï¿½ï¿½Ó¾ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½
  * Created by WY on 2015/10/20.
  */
 public interface FileUtil {

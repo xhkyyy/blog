@@ -1,4 +1,4 @@
-package com.java87.demo.stream;
+package demo.stream;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,14 +13,14 @@ public class StreamDemo1 {
 
         List<String> fruits = Arrays.asList(new String[]{"apple", "orange", "pear", "ab"});
 
-        //1.Ô­Ê¼·½·¨
+        //1.Ô­Ê¼ï¿½ï¿½ï¿½ï¿½
         //for( ... ){ if( ... ) {count++} }
 
-        //2.Stream·½·¨
+        //2.Streamï¿½ï¿½ï¿½ï¿½
         long count = fruits.stream().filter(w -> Objects.nonNull(w) && w.startsWith("a")).count();
         System.out.println("count = " + count);
 
-        //²¢ÐÐÖ´ÐÐ
+        //ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½
         count = fruits.parallelStream().filter(w -> Objects.nonNull(w) && w.startsWith("a")).count();
         System.out.println("count = " + count);
         /*

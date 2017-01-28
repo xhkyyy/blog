@@ -1,4 +1,4 @@
-package com.java87.demo.stream;
+package demo.stream;
 
 import java.util.Arrays;
 import java.util.List;

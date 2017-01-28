@@ -1,4 +1,4 @@
-package com.java87.demo.time;
+package demo.time;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -12,7 +12,7 @@ public class TimeDemo2 {
 
     public static void main(String[] args) {
 
-        //1.±¾µØÈÕÆÚ
+        //1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         LocalDate today = LocalDate.now();
 

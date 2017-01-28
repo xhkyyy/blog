@@ -1,4 +1,4 @@
-package com.java87.demo.lambda;
+package demo.lambda;
 
 
 import java.util.ArrayList;

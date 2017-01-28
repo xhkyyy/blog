@@ -1,7 +1,7 @@
-package com.java87.demo.lambda;
+package demo.lambda;
 
 
-import com.java87.demo.other.People;
+import demo.other.People;
 
 import java.util.ArrayList;
 import java.util.Arrays;

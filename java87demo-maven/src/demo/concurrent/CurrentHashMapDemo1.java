@@ -1,4 +1,4 @@
-package com.java87.demo.concurrent;
+package demo.concurrent;
 
 import java.util.HashMap;
 import java.util.Map;

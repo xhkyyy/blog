@@ -1,4 +1,4 @@
-package com.java87.demo.defaultmethod;
+package demo.defaultmethod;
 
 /**
  * Created by WY on 2015/10/20.

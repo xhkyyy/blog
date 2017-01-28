@@ -1,4 +1,4 @@
-package com.java87.demo.time;
+package demo.time;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -10,10 +10,10 @@ public class TimeDemo4 {
 
     public static void main(String[] args) {
 
-        //1.Õâ¸öÀà·â×°Ò»ÌìÖÐµÄÄ³¸öÊ±¼ä£¬µ±µØÀíÎ»ÖÃ²»ÖØÒªµÄÇé¿öÏÂ£¬¿ÉÒÔÊ¹ÓÃÕâ¸öÀàÀ´Ö»´æ´¢Ò»Ììµ±ÖÐµÄÄ³¸öÊ±¼ä¡£
+        //1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°Ò»ï¿½ï¿½ï¿½Ðµï¿½Ä³ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã²ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½æ´¢Ò»ï¿½ìµ±ï¿½Ðµï¿½Ä³ï¿½ï¿½Ê±ï¿½ä¡£
         LocalTime t1 = LocalTime.now();
 
-        //2.¸ÃÀà·â×°ÁËÒ»¸öÄê/ÔÂ/ÈÕµÄ×éºÏ¡£µ±µØÀíÎ»ÖÃ£¨¼´Ê±Çø£©±äµÃ²»ÖØÒªÊ±£¬Ê¹ÓÃËü´æ´¢ÈÕÆÚ½«·Ç³£·½±ã¡£
+        //2.ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½/ï¿½Õµï¿½ï¿½ï¿½Ï¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ÒªÊ±ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½æ´¢ï¿½ï¿½ï¿½Ú½ï¿½ï¿½Ç³ï¿½ï¿½ï¿½ï¿½ã¡£
         LocalDate t2 = LocalDate.now();
 
 

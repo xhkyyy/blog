@@ -1,4 +1,4 @@
-package com.java87.demo.other;
+package demo.other;
 
 /**
  * Created by Len on 10/21/15.

@@ -1,4 +1,4 @@
-package com.java87.demo.staticmethod;
+package demo.staticmethod;
 
 /**
  * Created by WY on 2015/10/20.

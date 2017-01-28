@@ -1,4 +1,4 @@
-package com.java87.demo.other;
+package demo.other;
 
 import java.io.*;
 import java.net.URL;

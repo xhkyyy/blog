@@ -1,4 +1,4 @@
-package com.java87.demo.time;
+package demo.time;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -10,7 +10,7 @@ public class TimeDemo1 {
 
     public static void main(String[] args) {
 
-        //1.¼ÆËã2¸öµãÖ®¼äµÄÊ±¼ä
+        //1.ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
         Instant start = Instant.now();
 
         try {

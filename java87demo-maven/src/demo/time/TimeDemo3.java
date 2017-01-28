@@ -1,4 +1,4 @@
-package com.java87.demo.time;
+package demo.time;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -11,7 +11,7 @@ public class TimeDemo3 {
 
     public static void main(String[] args) {
 
-        //1.¾àÀëÐÂÄêµÄÊ±¼ä
+        //1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
         LocalDate t1 = LocalDate.now();
         LocalDate hny = LocalDate.of(2016, 1, 1);
         System.out.println(t1.until(hny, ChronoUnit.DAYS));
