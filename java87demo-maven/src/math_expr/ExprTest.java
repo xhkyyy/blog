@@ -1,6 +1,9 @@
 package math_expr;
 
+import com.udojava.evalex.Expression;
 import org.junit.Test;
+
+import java.math.BigDecimal;
 
 
 /**
@@ -11,7 +14,10 @@ public class ExprTest {
 	@Test
 	public void test(){
 
-		System.out.println("xxxx");
+		Expression expression = new Expression("1+4/2");
+		BigDecimal result = expression.eval();
+
+		System.out.println(result);
 
 	}
 
