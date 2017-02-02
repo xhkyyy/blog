@@ -11,6 +11,7 @@ public class Singleton1 {
 		if (instance == null) {
 			synchronized (Singleton1.class) {
 				if (instance == null) {
+					//这并非一个院子操作，加入volatile防止指令重排序
 					instance = new Instance();
 				}
 			}
