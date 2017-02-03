@@ -18,6 +18,7 @@ public abstract class AbExcelParser {
 	protected abstract List<ERow> parseXlsx(String filePath, int sheetIndex);
 
 	public List<ERow> parseExcel(String filePath, int sheetIndex) {
+		sheetIndex--;
 		if (StringUtils.isBlank(filePath) ||
 				(!filePath.endsWith(EXCEL_SUFFIX_XLS) && !filePath.endsWith(EXCEL_SUFFIX_XLSX)) ||
 				sheetIndex < 0 ||

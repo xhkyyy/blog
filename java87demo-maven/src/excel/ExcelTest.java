@@ -11,16 +11,13 @@ public class ExcelTest {
 
 	@Test
 	public void test1(){
-		AbExcelParser parser = POIExcelParser.getInstance();
-
-		List<ERow> eRowList = parser.parseExcel("/Users/Len/Desktop/excel_demo.xlsx", 0);
+		AbExcelParser parser  = ExcelParserFactory.getExcelParser();
+		List<ERow> eRowList = parser.parseExcel("/Users/Len/Desktop/CoF1_CCT=5000K_180mA105C.xlsx", 3);
 		printERow(eRowList);
 	}
 
-	@Test
 	public void test2(){
-		AbExcelParser parser = POIExcelParser.getInstance();
-
+		AbExcelParser parser = ExcelParserFactory.getExcelParser();
 		List<ERow> eRowList = parser.parseExcel("/Users/Len/Desktop/Workbook1.xls", 0);
 		printERow(eRowList);
 
@@ -32,7 +29,7 @@ public class ExcelTest {
 		} else {
 			for (ERow eRow : eRowList) {
 				for (ECell eCell : eRow.geteCellList()) {
-					System.out.print(eCell.getIndex() + "-" + eCell.getContent() + "   ");
+					System.out.print(eCell.getContent() + "   ");
 				}
 				System.out.println("");
 			}

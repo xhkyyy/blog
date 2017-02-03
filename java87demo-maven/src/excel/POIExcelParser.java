@@ -1,14 +1,19 @@
 package excel;
 
+import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.util.LocaleUtil;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -84,6 +89,7 @@ public class POIExcelParser extends AbExcelParser {
 	private List<ERow> parse(Sheet sheet) {
 		List<ERow> eRowList = new ArrayList<>();
 		int cellIndex = 0;
+		String value;
 		for (Row row : sheet) {
 			Iterator<Cell> cellIterator = row.cellIterator();
 			ERow eRow = new ERow();
@@ -91,11 +97,18 @@ public class POIExcelParser extends AbExcelParser {
 
 			while (cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
-				if (cell.getCellTypeEnum() == CellType.FORMULA) {
-					eRow.addECell(new ECell(++cellIndex, parseFormulaResult(cell)));
-				} else {
-					eRow.addECell(new ECell(++cellIndex, cell.toString()));
+				switch (cell.getCellTypeEnum()) {
+					case NUMERIC:
+						value = parseNumeric(cell);
+						break;
+					case FORMULA:
+						value = parseFormulaResult(cell);
+						break;
+					default:
+						value = cell.toString();
 				}
+
+				eRow.addECell(new ECell(++cellIndex, value));
 			}
 
 			cellIndex = 0;
@@ -103,12 +116,24 @@ public class POIExcelParser extends AbExcelParser {
 		return eRowList;
 	}
 
+	private String parseNumeric(Cell cell) {
+		String value;
+		if (DateUtil.isCellDateFormatted(cell)) {
+			DateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy", LocaleUtil.getUserLocale());
+			sdf.setTimeZone(LocaleUtil.getUserTimeZone());
+			value = sdf.format(cell.getDateCellValue());
+		} else {
+			value = BigDecimal.valueOf(cell.getNumericCellValue()).toPlainString();
+		}
+		return value;
+	}
+
 
 	private String parseFormulaResult(Cell cell) {
 		String cellContent = null;
 		switch (cell.getCachedFormulaResultType()) {
 			case Cell.CELL_TYPE_NUMERIC:
-				cellContent = String.valueOf(cell.getNumericCellValue());
+				cellContent = BigDecimal.valueOf(cell.getNumericCellValue()).toPlainString();
 				break;
 			case Cell.CELL_TYPE_STRING:
 				cellContent = String.valueOf(cell.getRichStringCellValue());
