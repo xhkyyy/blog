@@ -1,8 +1,5 @@
 package jmh;
 
-package org.openjdk.jmh.samples;
-
-
 import org.openjdk.jmh.annotations.Benchmark;
 
 import org.openjdk.jmh.runner.Runner;
