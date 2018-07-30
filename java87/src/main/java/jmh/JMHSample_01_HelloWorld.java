@@ -125,7 +125,7 @@ public class JMHSample_01_HelloWorld {
 
                 .include(JMHSample_01_HelloWorld.class.getSimpleName())
 
-                .forks(1)
+                .forks(3)
 
                 .build();
 
