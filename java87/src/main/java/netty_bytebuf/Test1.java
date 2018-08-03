@@ -10,10 +10,10 @@ import java.nio.charset.Charset;
 public class Test1 {
     public static void main(String[] args) {
         // 4 种 buffer 类型
-        ByteBuf heapBufferInPool = ByteBufAllocator.DEFAULT.heapBuffer(2);
+      /*  ByteBuf heapBufferInPool = ByteBufAllocator.DEFAULT.heapBuffer(2);
         ByteBuf directBufferInPool = ByteBufAllocator.DEFAULT.directBuffer(2);
         ByteBuf heapBufferNotInPool = Unpooled.buffer(2);
-        ByteBuf directBufferNotInPool = Unpooled.directBuffer(2);
+        ByteBuf directBufferNotInPool = Unpooled.directBuffer(2);*/
 
         // how to manipulate buffer
         ByteBuf byteBuf = ByteBufAllocator.DEFAULT.heapBuffer(2);

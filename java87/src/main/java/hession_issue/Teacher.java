@@ -1,38 +1,31 @@
 package hession_issue;
 
-public class Student extends User {
+import java.util.HashMap;
 
-    // 和父类拥有相同到字段名
-    private int userId;
+public class Teacher extends User {
 
-    private String desc;
+    private HashMap<String, Number> contentMap = new HashMap<String, Number>();
 
-    public Student(String desc) {
-        this.desc = desc;
+    private Float aFloat;
+
+    public HashMap<String, Number> getContentMap() {
+        return contentMap;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public Float getaFloat() {
+        return aFloat;
     }
 
     @Override
     public String toString() {
-        return "Student{" +
-                "userId=" + userId +
-                ", desc='" + desc + '\'' +
-                ", userName='" + getUserName() + '\'' +
+        return "Teacher{" +
+                "contentMap=" + contentMap +
+                ", aFloat=" + aFloat +
                 '}';
     }
+
+    public void setaFloat(Float aFloat) {
+        this.aFloat = aFloat;
+    }
+
 }
