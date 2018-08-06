@@ -1,6 +1,9 @@
 # JMH
 
-> What is JMH? http://openjdk.java.net/projects/code-tools/jmh/
+> What is JMH?
+
+     http://openjdk.java.net/projects/code-tools/jmh/
+     http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/
 
 > 一开始输出本次运行相关参数信息，然后开始预热，其后就开始正常运行了。
 
