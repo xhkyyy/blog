@@ -89,7 +89,7 @@ public class JMHSample_02_BenchmarkModes {
 
     public void measureThroughput() throws InterruptedException {
 
-        TimeUnit.MILLISECONDS.sleep(100);
+        TimeUnit.MILLISECONDS.sleep(1000);
 
     }
 

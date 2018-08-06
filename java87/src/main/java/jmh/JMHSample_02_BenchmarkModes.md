@@ -87,9 +87,9 @@ Iteration   5: 9.948 ops/s
 
 
 Result "jmh.JMHSample_02_BenchmarkModes.measureThroughput":
-  9.950 ±(99.9%) 0.027 ops/s [Average]
+  9.950 ±(99.9%) 0.027 ops/s [Average] 平均每秒钟 9.950 - 9.977 次操作。
   (min, avg, max) = (9.940, 9.950, 9.958), stdev = 0.007
-  CI (99.9%): [9.923, 9.977] (assumes normal distribution)
+  CI (99.9%): [9.923, 9.977] (assumes normal distribution 假设正态分布)
 
 
 # JMH version: 1.21
