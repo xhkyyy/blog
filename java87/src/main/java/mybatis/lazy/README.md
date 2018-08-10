@@ -18,7 +18,7 @@
 ```
 
 
-### 2.在 Mapper 中配置 fetchType=lazy 属性
+### 2.在 Mapper 中配置 fetchType=lazy 属性
 ```xml
 <resultMap id="BaseResultMap" type="com.x.User">
         <id column="id" property="id" jdbcType="INTEGER"/>
@@ -28,7 +28,7 @@
     </resultMap>
 ```
 
-### 3.在代码中，只有 user.getUserInfo() 的时候才会去执行相关 sql，加载数据。（可以通过观察 mybatis sql 的输出来判断懒加载机制是否生效）
+### 3.在代码中，只有 user.getUserInfo() 的时候才会去执行相关 sql，加载数据。（可以通过观察 mybatis sql 的输出来判断懒加载机制是否生效）
 
 
 ## 实现机制
@@ -101,7 +101,7 @@ public final String getUserInfo()
 
 ```
 
-3.在调用上述的实体方法的时候，会通过调用 CglibProxyFactory 的 intercept 方式执行特殊的逻辑处理，如下：
+3.在调用上述实体方法的时候，会通过调用 CglibProxyFactory 的 intercept 方式执行特殊的逻辑处理，如下：
 ```java
 public Object intercept(Object enhanced, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
       final String methodName = method.getName();
