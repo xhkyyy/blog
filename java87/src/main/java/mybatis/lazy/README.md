@@ -1,7 +1,7 @@
 # 延迟加载
 
 ## 配置方法
-### 1.在 mybatis 配置文件中新增：
+##### 1.在 mybatis 配置文件中新增：
 > http://www.mybatis.org/mybatis-3/configuration.html
 ```xml
 <configuration>
@@ -18,7 +18,7 @@
 ```
 
 
-### 2.在 Mapper 中配置 fetchType=lazy 属性
+##### 2.在 Mapper 中配置 fetchType=lazy 属性
 ```xml
 <resultMap id="BaseResultMap" type="com.x.User">
         <id column="id" property="id" jdbcType="INTEGER"/>
@@ -28,11 +28,11 @@
     </resultMap>
 ```
 
-### 3.在代码中，只有 user.getUserInfo() 的时候才会去执行相关 sql，加载数据。（可以通过观察 mybatis sql 的输出来判断懒加载机制是否生效）
+##### 3.在代码中，只有 user.getUserInfo() 的时候才会去执行相关 sql，加载数据。（可以通过观察 mybatis sql 的输出来判断懒加载机制是否生效）
 
 
 ## 实现机制
-1.Mapper 执行的时候会获取 getProxyFactory()，它的默认实现如下：
+##### 1.Mapper 执行的时候会获取 getProxyFactory()，它的默认实现如下：
 ```java
 //org.apache.ibatis.session.Configuration.java
 public ProxyFactory getProxyFactory() {
@@ -42,7 +42,7 @@ public ProxyFactory getProxyFactory() {
     return proxyFactory;
   }
 ```
-2.cglib 会创建实体对象的增强类，会向实体的所有方法（比如 getter、setter），插入相关的增强逻辑。
+##### 2.cglib 会创建实体对象的增强类，会向实体的所有方法（比如 getter、setter），插入相关的增强逻辑。
 ```java
 public class User$$EnhancerByCGLIB$$a213efd5 extends User implements WriteReplaceInterface, Factory {
 
@@ -101,7 +101,7 @@ public final String getUserInfo()
 
 ```
 
-3.在调用上述实体方法的时候，会通过调用 CglibProxyFactory 的 intercept 方式执行特殊的逻辑处理，如下：
+##### 3.在调用上述实体方法的时候，会通过调用 CglibProxyFactory 的 intercept 方式执行特殊的逻辑处理，如下：
 ```java
 public Object intercept(Object enhanced, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
       final String methodName = method.getName();
