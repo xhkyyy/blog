@@ -3,7 +3,9 @@
 ### Option
 > ChannelOption.SO_BACKLOG: the maximum queue length for incoming connection indications(a request to connect) is set to the backlog parameter. If a connection indication arrives when the queue is full, the connection is refused.
 
-### [option vs childOption:](https://stackoverflow.com/questions/35496345/what-is-the-difference-between-serverbootstrap-option-and-serverbootstrap-chil)
+### option vs childOption:
+
+[stackoverflow](https://stackoverflow.com/questions/35496345/what-is-the-difference-between-serverbootstrap-option-and-serverbootstrap-chil)
 
 ##### 1.
 The parameters that we set using `ServerBootStrap.option` apply to the ChannelConfig of a newly created ServerChannel,i.e., the server socket which listens for and accepts the client connections.
