@@ -81,11 +81,7 @@ public final class Signal extends Error implements Constant<Signal> {
 以 IntegerHeaderFrameDecoder 举例来说，如果 buf.readInt() 没有读到 4 个字节的数据，那么将抛出 Signal 异常。这个过程将随着网络数据的到达不断的重试, 直到可读数据的大小满足 >= 4 个字节为止。
 
 ```java
-public class IntegerHeaderFrameDecoder extends ReplayingDecoder<Void> {
-   protected void decode(ChannelHandlerContext ctx, ByteBuf buf) throws Exception {
-     out.add(buf.readBytes(buf.readInt()));
-   }
- }
+out.add(buf.readBytes(buf.readInt()));
 ```
 
 ### 2.ReplayingDecoder 调用流程
