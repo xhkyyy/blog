@@ -87,4 +87,4 @@ out.add(buf.readBytes(buf.readInt()));
 ### 2.ReplayingDecoder 调用流程
 
 以 IntegerHeaderFrameDecoder 为例：
-`callDecode(...)` --->> `decodeRemovalReentryProtection(ctx, ReplayingDecoderByteBuf, out)`  --->> `decode(ctx, in, out)` --->> `buf.readInt()等待 4 字节数据到达。`
+`callDecode(...)` --->> `decodeRemovalReentryProtection(ctx, ReplayingDecoderByteBuf, out)`  --->> `decode(ctx, buf, out)` --->> `buf.readInt()等待 4 字节数据到达。`
