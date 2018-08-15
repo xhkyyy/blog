@@ -13,7 +13,6 @@ p.addLast("4", new OutboundHandlerB());
 p.addLast("5", new InboundOutboundHandlerX());
 ```
 
-
 ## inbound
 
 + 如果事件是 inbound 事件，则按照 addLast `正序`执行，即：1, 2, 5
