@@ -1,4 +1,4 @@
-# [netty pipeline 执行顺序](https://netty.io/4.0/api/io/netty/channel/ChannelPipeline.html)
+# [netty pipeline 执行顺序](https://netty.io/4.0/api/io/netty/channel/ChannelPipeline.html)
 
 > Each channel has its own pipeline and it is created automatically when a new channel is created. 
 
