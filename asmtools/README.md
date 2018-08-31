@@ -7,6 +7,9 @@
 > jasm is an assembler that accepts a text file based on the JASM Specification, and produces a .class file for use with a Java Virtual Machine.
   Usage:
 
+```sh
+java -cp asmtools.jar org.openjdk.asmtools.jdis.Main JMHSample_10_ConstantFold.class
+```
 
 [openjdk asmtools](https://wiki.openjdk.java.net/display/CodeTools/asmtools)
 [Using the AsmTools](https://wiki.openjdk.java.net/display/CodeTools/Chapter+2#Chapter2-Jdis)

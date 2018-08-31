@@ -1,0 +1,94 @@
+package  jmh;
+
+@+org/openjdk/jmh/annotations/State { value = enum org/openjdk/jmh/annotations/Scope Thread}
+@+org/openjdk/jmh/annotations/BenchmarkMode { value = {
+  enum org/openjdk/jmh/annotations/Mode AverageTime}
+}
+@+org/openjdk/jmh/annotations/OutputTimeUnit { value = enum java/util/concurrent/TimeUnit NANOSECONDS}
+super public class JMHSample_10_ConstantFold
+	version 52:0
+{
+
+private Field x:D;
+private final Field wrongX:D	= double 3.141592653589793d;
+
+public Method "<init>":"()V"
+	stack 3 locals 1
+{
+		aload_0;
+		invokespecial	Method java/lang/Object."<init>":"()V";
+		aload_0;
+		ldc2_w	double 3.141592653589793d;
+		putfield	Field x:"D";
+		aload_0;
+		ldc2_w	double 3.141592653589793d;
+		putfield	Field wrongX:"D";
+		return;
+	
+}
+
+@+org/openjdk/jmh/annotations/Benchmark { }
+public Method baseline:"()D"
+	stack 2 locals 1
+{
+		ldc2_w	double 3.141592653589793d;
+		dreturn;
+	
+}
+
+@+org/openjdk/jmh/annotations/Benchmark { }
+public Method measureWrong_1:"()D"
+	stack 2 locals 1
+{
+		ldc2_w	double 3.141592653589793d;
+		invokestatic	Method java/lang/Math.log:"(D)D";
+		dreturn;
+	
+}
+
+@+org/openjdk/jmh/annotations/Benchmark { }
+public Method measureWrong_2:"()D"
+	stack 2 locals 1
+{
+		ldc2_w	double 3.141592653589793d;
+		invokestatic	Method java/lang/Math.log:"(D)D";
+		dreturn;
+	
+}
+
+@+org/openjdk/jmh/annotations/Benchmark { }
+public Method measureRight:"()D"
+	stack 2 locals 1
+{
+		aload_0;
+		getfield	Field x:"D";
+		invokestatic	Method java/lang/Math.log:"(D)D";
+		dreturn;
+	
+}
+
+public static Method main:"([Ljava/lang/String;)V"
+	throws org/openjdk/jmh/runner/RunnerException
+	stack 3 locals 2
+{
+		new	class org/openjdk/jmh/runner/options/OptionsBuilder;
+		dup;
+		invokespecial	Method org/openjdk/jmh/runner/options/OptionsBuilder."<init>":"()V";
+		ldc	class JMHSample_10_ConstantFold;
+		invokevirtual	Method java/lang/Class.getSimpleName:"()Ljava/lang/String;";
+		invokevirtual	Method org/openjdk/jmh/runner/options/OptionsBuilder.include:"(Ljava/lang/String;)Lorg/openjdk/jmh/runner/options/ChainedOptionsBuilder;";
+		iconst_1;
+		invokeinterface	InterfaceMethod org/openjdk/jmh/runner/options/ChainedOptionsBuilder.forks:"(I)Lorg/openjdk/jmh/runner/options/ChainedOptionsBuilder;",  2;
+		invokeinterface	InterfaceMethod org/openjdk/jmh/runner/options/ChainedOptionsBuilder.build:"()Lorg/openjdk/jmh/runner/options/Options;",  1;
+		astore_1;
+		new	class org/openjdk/jmh/runner/Runner;
+		dup;
+		aload_1;
+		invokespecial	Method org/openjdk/jmh/runner/Runner."<init>":"(Lorg/openjdk/jmh/runner/options/Options;)V";
+		invokevirtual	Method org/openjdk/jmh/runner/Runner.run:"()Ljava/util/Collection;";
+		pop;
+		return;
+	
+}
+
+} // end Class JMHSample_10_ConstantFold
