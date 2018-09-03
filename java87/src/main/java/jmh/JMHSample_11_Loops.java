@@ -13,6 +13,20 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 这是一个错误的示例，不要试图在方法体内使用循环。
+ * <p>
+ * 本次示例实际的执行结果如下：
+ * <p>
+ * Benchmark                               Mode  Cnt  Score   Error  Units
+ * JMHSample_11_Loops.measureRight         avgt    5  3.973 ± 2.315  ns/op
+ * JMHSample_11_Loops.measureWrong_1       avgt    5  5.430 ± 7.728  ns/op
+ * JMHSample_11_Loops.measureWrong_10      avgt    5  0.356 ± 0.017  ns/op
+ * JMHSample_11_Loops.measureWrong_100     avgt    5  0.051 ± 0.017  ns/op
+ * JMHSample_11_Loops.measureWrong_1000    avgt    5  0.051 ± 0.020  ns/op
+ * JMHSample_11_Loops.measureWrong_10000   avgt    5  0.028 ± 0.020  ns/op
+ * JMHSample_11_Loops.measureWrong_100000  avgt    5  0.021 ± 0.002  ns/op
+ */
 
 @State(Scope.Thread)
 
