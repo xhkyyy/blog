@@ -169,7 +169,8 @@ public class JMHSample_15_Asymmetric {
                 .include(JMHSample_15_Asymmetric.class.getSimpleName())
 
                 .forks(1)
-                .threads(12)
+
+                // .threads(12) 这里设置线程数： Threads: 12 (threads) = (3 * 4) = (3) groups
 
                 .build();
 
