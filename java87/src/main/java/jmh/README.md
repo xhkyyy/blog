@@ -36,6 +36,7 @@
 ### 其它
 
 + @OperationsPerInvocation 指明方法中循环迭代的次数，以让 JMH 适当的调整得分。
++ @CompilerControl 控制编译的行为。
 
 ### 完整输出：
 
