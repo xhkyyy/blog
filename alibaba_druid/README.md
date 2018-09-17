@@ -4,6 +4,10 @@
 
 # 保持最小连接数 minIdle 方法
 
+现象：长时间空闲的连接，Druid 无法保证最小连接数为 minIdle
+
+排查和解决方法：
+
 1.通过如下方法，检查 MySQL 的 `wait_timeout` 参数确定其大小。
 ```sql
 # 全局
