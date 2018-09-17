@@ -36,3 +36,8 @@ show variables like 'wait_timeout';
 *https://github.com/alibaba/druid/wiki/DruidDataSource%E9%85%8D%E7%BD%AE*
 
 *https://github.com/alibaba/druid/wiki/DruidDataSource%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%88%97%E8%A1%A8*
+
+
+# 参数最佳实践
+`maxWait` 和 `timeBetweenEvictionRunsMillis` 两个参数的值最好是一致的。
+尤其是 `timeBetweenEvictionRunsMillis` 不要过小于 `maxWait`。
