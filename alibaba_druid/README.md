@@ -4,7 +4,7 @@
 
 # 保持最小连接数 minIdle 方法
 
-1.通过如下方法，检查 MySQL 的 `wait_timeout` 参数确定其大小。
+1.通过如下方法，检查 MySQL 的 `wait_timeout` 参数确定其大小。
 ```sql
 # 全局
 show global variables like 'wait_timeout';
@@ -17,13 +17,15 @@ show variables like 'wait_timeout';
 
 2.配置一个连接在池中最小、最大生存的时间: `minEvictableIdleTimeMillis`、`maxEvictableIdleTimeMillis`。
 
-其中，`minEvictableIdleTimeMillis` 的值不能大于 mysql 的 wait_timeout，否则，MySQL 将先于 Druid 而把连接关闭。（这个检查是至关重要的）
+其中，`minEvictableIdleTimeMillis` 的值不能大于 mysql 的 wait_timeout，否则，MySQL 将先于 Druid 而把连接关闭。（这个检查是至关重要的）
 
 
 3.配置 `testWhileIdle` 参数为 true。
 
 
-4.配置 `keepAlive` 参数为 true。这个参数存在多种配置方式，见：https://github.com/alibaba/druid/wiki/KeepAlive_cn
+4.配置 `keepAlive` 参数为 true。
+
+这个参数存在多种配置方式，见：https://github.com/alibaba/druid/wiki/KeepAlive_cn
 
 
 5.配置 `initialSize`、`minIdle`、`maxActive` 三个参数。这 3 个参数最好都显式的配置，因为 `maxActive` 的默认值是 8，有可能你配置的 `minIdle` 却是 20。
