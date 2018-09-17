@@ -20,10 +20,10 @@ show variables like 'wait_timeout';
 其中，`minEvictableIdleTimeMillis` 的值不能大于 mysql 的 wait_timeout，否则，MySQL 将先于 Druid 而把连接关闭。（这个检查是至关重要的）
 
 
-3.配置 `testWhileIdle` 参数为 true。
+3.配置 `testWhileIdle` 参数为 true
 
 
-4.配置 `keepAlive` 参数为 true。
+4.配置 `keepAlive` 参数为 true
 
 这个参数存在多种配置方式，见：https://github.com/alibaba/druid/wiki/KeepAlive_cn
 
