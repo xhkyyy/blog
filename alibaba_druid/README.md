@@ -4,7 +4,7 @@
 
 # 保持最小连接数 minIdle 方法
 
-1.通过如下方法，检查 MySQL 的 `wait_timeout` 参数确定其大小。
+1.通过如下方法，检查 MySQL 的 `wait_timeout` 参数确定其大小。
 ```sql
 # 全局
 show global variables like 'wait_timeout';
