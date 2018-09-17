@@ -28,7 +28,7 @@ show variables like 'wait_timeout';
 这个参数存在多种配置方式，见：https://github.com/alibaba/druid/wiki/KeepAlive_cn
 
 
-5.配置 `initialSize`、`minIdle`、`maxActive` 三个参数。这 3 个参数最好都显式的配置，因为 `maxActive` 的默认值是 8，有可能你配置的 `minIdle` 却是 20。
+5.配置 `initialSize`、`minIdle`、`maxActive` 三个参数。这 3 个参数最好都显式的配置，因为 `maxActive` 的默认值是 8，有可能你配置的 `minIdle` 却是 20。
 
 
 *其它配置说明见：*
