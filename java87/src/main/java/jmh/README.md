@@ -31,7 +31,13 @@
     SampleTime:     随机采样，例如 80%在多少毫秒内
     All:            所有模式
     
-    
+
+文章参考：
+
+http://www.importnew.com/12548.html
+
+
+
 
 ### 其它
 

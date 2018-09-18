@@ -22,6 +22,13 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 
+/**
+ * Control 是一个不稳定的 API，可能随时被改动。
+ *
+ * 运行结果将为每个 @Group("...") 注解打印输出信息
+ */
+
+
 @State(Scope.Group)
 
 public class JMHSample_18_Control {
