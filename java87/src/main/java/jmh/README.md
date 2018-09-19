@@ -43,6 +43,11 @@ http://www.importnew.com/12548.html
 
 + @OperationsPerInvocation 指明方法中循环迭代的次数，以让 JMH 适当的调整得分。
 + @CompilerControl 控制编译的行为。
++ @Measurement     实际测试的运行轮数
++ @Warmup          预热运行轮数
++ @Fork            fork 进程数，默认主进程
++ @Setup           等同于JUnit里的 @BeforeClass
++ @Benchmark:      等同于JUnit里的 @Test
 
 ### 完整输出：
 
