@@ -1,20 +1,18 @@
 package jmh;
 
+import java.util.Random;
+
 public class Test {
     public static void main(String[] args) {
 
-        long t = System.nanoTime();
+        Random r = new Random();
 
-        long token = 2;
+        int helloworld = r.nextInt();
 
-        int count = 0;
+        helloworld--;
 
-        for (long i = token; i > 0; i--) {
-            t += (t * 0x5DEECE66DL + 0xBL + i) & (0xFFFFFFFFFFFFL);
-            count++;
-        }
 
-        System.out.println(count);
+        System.out.println(helloworld);
 
     }
 }
