@@ -35,6 +35,10 @@ import java.util.concurrent.TimeUnit;
 /**
  * 一个缓存行一般为 64 字节，java 对象头在 32 位系统中占用 8 字节，在 64 位系统中，如果不开启对象头压缩将占用 16 字节。
  * 现在 cpu 一般以 64 个字节作为一个缓存行，所以，我们只要保证我们对象的字段和字段之间（或者一个对象字段）占用大于等于 64 字节即可。
+ *
+ * 使用 @sun.misc.Contended (加在字段上) 记得在 java 启动参数中加入 -XX:-RestrictContended
+ *
+ * https://www.cnblogs.com/Binhua-Liu/p/5623089.html
  */
 
 @BenchmarkMode(Mode.Throughput)
@@ -323,10 +327,10 @@ public class JMHSample_22_FalseSharing {
      */
 
 
-    @State(Scope.Group)
-
+    /*@State(Scope.Group)
     public static class StateContended {
-        @sun.misc.Contended
+
+        //@sun.misc.Contended
 
         int readOnly;
 
@@ -335,7 +339,7 @@ public class JMHSample_22_FalseSharing {
 
         int writeOnly;
 
-    }
+    }*/
 
 
     @Benchmark
