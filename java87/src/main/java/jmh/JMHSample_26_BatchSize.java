@@ -61,12 +61,24 @@ public class JMHSample_26_BatchSize {
 
     /*
      * This is what you do with JMH.
+     *
+     * batchSize: 每次操作调用的次数（不要试图自己在方法调用中使用循环，这是非常错误的，见：JMHSample_11_Loops.java）
+     * Mode.SingleShotTime: 在这里代表的含义是一次批处理的总调用时间
      */
     @Benchmark
     @Warmup(iterations = 5, batchSize = 5000)
     @Measurement(iterations = 5, batchSize = 5000)
     @BenchmarkMode(Mode.SingleShotTime)
     public List<String> measureRight() {
+        list.add(list.size() / 2, "something");
+        return list;
+    }
+
+    @Benchmark
+    @Warmup(iterations = 5, batchSize = 10000)
+    @Measurement(iterations = 5, batchSize = 10000)
+    @BenchmarkMode(Mode.SingleShotTime)
+    public List<String> measureRight_2() {
         list.add(list.size() / 2, "something");
         return list;
     }

@@ -25,7 +25,7 @@
 
 > 模式分类：
 
-    SingleShotTime: 用于测试冷启动的性能
+    SingleShotTime: 方法的单次调用时间 / 一次批处理的总调用时间
     Throughput:     吞吐量，如 1 秒内可以执行多少次调用
     AverageTime:    每次调用的平均耗时
     SampleTime:     随机采样，例如 80%在多少毫秒内
@@ -35,6 +35,7 @@
 文章参考：
 
 http://www.importnew.com/12548.html
+https://sq.163yun.com/blog/article/179671960481783808
 
 
 
