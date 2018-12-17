@@ -6,10 +6,7 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
-import org.openjdk.jmh.runner.options.TimeValue;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 @BenchmarkMode(Mode.AverageTime)
@@ -20,7 +17,7 @@ public class JMH_Singleton {
     @Group("singleton3Best")
     @Benchmark
     public void singleton3Best(Blackhole blackhole) {
-        blackhole.consume(Singleton3Best.getInstance());
+        blackhole.consume(Singleton3.getInstance());
     }
 
     @Group("singleton4")

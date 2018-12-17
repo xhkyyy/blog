@@ -1,17 +1,17 @@
 package singleton;
 
 /**
- * Created by Len on 25/12/2016.
+ * 性能最好的实现单例的方法
  */
 public class Singleton2 {
 
-	private static class InstanceHolder{
-		public static Instance instance = new Instance();
-	}
+    private static class InstanceHolder {
+        public static Instance instance = new Instance();
+    }
 
-	public static Instance getInstance(){
-		return InstanceHolder.instance;
-	}
+    public static Instance getInstance() {
+        return InstanceHolder.instance;
+    }
 
 
 }
