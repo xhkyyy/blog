@@ -21,7 +21,9 @@ public class Singleton3 {
 
     public static Singleton3 getInstance() {
 
-        // 使用局部变量 obj 是为了提高性能
+        // 使用局部变量 obj 是为了提高性能：
+        // 原因：访问 volatile 变量会导致刷新缓存行，导致 CPU 缓存失效（CPU 高速缓存和主存之间对同步）。
+        // 通过减少对 volatile 变量的访问，避免不必要对同步、缓存行失效。
         Singleton3 obj = instance;
 
         if (obj == null) {
