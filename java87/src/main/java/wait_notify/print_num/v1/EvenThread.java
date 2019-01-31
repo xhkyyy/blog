@@ -3,11 +3,18 @@ package wait_notify.print_num.v1;
 import static wait_notify.print_num.PrintNumTest.*;
 
 public class EvenThread extends Thread {
+
+    private final int MAX_NUM;
+
+    public EvenThread(int MAX_NUM) {
+        this.MAX_NUM = MAX_NUM;
+    }
+
     @Override
     public void run() {
         int num = 2;
 
-        while (num <= 100) {
+        while (num <= MAX_NUM) {
 
             while (updated) {
                 synchronized (lock1) {

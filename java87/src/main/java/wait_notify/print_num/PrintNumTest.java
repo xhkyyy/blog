@@ -12,11 +12,13 @@ public class PrintNumTest {
 
     public static void main(String[] args) throws InterruptedException {
 
-        EvenThread evenThread = new EvenThread();
+        final int MAX = 1000;
+
+        EvenThread evenThread = new EvenThread(MAX);
         evenThread.start();
 
 
-        OddThread oddThread = new OddThread();
+        OddThread oddThread = new OddThread(MAX);
         oddThread.start();
 
         evenThread.join();
