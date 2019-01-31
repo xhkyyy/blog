@@ -16,6 +16,7 @@ public class EvenThread extends Thread {
 
         while (num <= MAX_NUM) {
 
+            // 使用 while 是为了取保执行顺序是先 wait 再 notify, 不能出现还没有 wait 就执行 notify 的情况
             while (updated) {
                 synchronized (lock1) {
                     lock1.notify();
