@@ -19,9 +19,9 @@ Partition tolerance （ **P** ） 分区容忍性
 
 由于 **P** 不可避免，所以，当网络分区发生后，我们只能在 **CP**、**AP** 之间作出选择。
 
- - Eventual Consistency 最终一致性：在可用性和一致性方面很好当做了一个平衡
+ - Eventual Consistency 最终一致性：在 **A** 和 **C** 方面做了一个很好当平衡
 
- 
+
 
 
 
