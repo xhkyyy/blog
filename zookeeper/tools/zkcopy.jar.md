@@ -4,4 +4,4 @@
 
 递归复制一个 path：
 
-java -jar zkcopy.jar --source x.x.x.x:2181/p1/data1 --target  y.y.y.y:2181/p1/data2
+java -jar zkcopy.jar --source 10.10.10.10:2181/p1/data1 --target  10.10.10.10:2181/p1/data2
