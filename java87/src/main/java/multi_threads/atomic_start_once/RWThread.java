@@ -13,6 +13,8 @@ public class RWThread extends Thread {
     @Override
     public void run() {
 
+        System.out.println("Thread ID: " + Thread.currentThread().getId());
+
         // 多线程环境下，保证仅且只执行一次
         if (!ab.compareAndSet(false, true)) {
             return;

@@ -27,8 +27,12 @@ public class Test {
             }
         }
 
-        System.out.println();
-        System.out.println("count: " + RWThread.count);
+        if (RWThread.count.get() != 1) {
+            throw new IllegalStateException();
+        } else {
+            System.out.println();
+            System.out.println("count: " + RWThread.count);
+        }
 
 
     }
