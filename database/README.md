@@ -1,5 +1,7 @@
 # Database
 
+### 知识点索引
+
 + [scale out](scale_out.md)
 
 
