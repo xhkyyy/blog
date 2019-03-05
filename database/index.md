@@ -43,3 +43,4 @@ select * from table where a=? and b=? and c=?
 
 ### 回表
 
+![1](https://github.com/xhkyyy/blog/raw/master/images/db_index.png)
