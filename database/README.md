@@ -3,6 +3,7 @@
 ### 知识点索引
 
 + [scale out](scale_out.md)
++ [索引相关](db_index.md)
 
 
 ### 怎样学习数据库
