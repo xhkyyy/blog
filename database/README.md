@@ -5,6 +5,7 @@
 + [scale out](scale_out.md)
 + [索引相关](db_index.md)
 + [陷阱](trap.md)
++ [SQL](sql.md)
 
 ### 怎样学习数据库
 
