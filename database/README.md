@@ -2,6 +2,7 @@
 
 ### 知识点索引
 
++ [NoSQL](nosql/README.md)
 + [scale out](scale_out.md)
 + [索引相关](db_index.md)
 + [陷阱](trap.md)
