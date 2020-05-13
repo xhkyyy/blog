@@ -32,7 +32,7 @@ public class ConcatenateTest {
 
         }
 
-        System.out.println("measure1 size: " + sb.length());
+        //System.out.println("measure1 size: " + sb.length());
     }
 
     @Benchmark
@@ -48,7 +48,7 @@ public class ConcatenateTest {
 
         }
 
-        System.out.println("measure2 size: " + sb.length());
+       // System.out.println("measure2 size: " + sb.length());
     }
 
     public static void main(String[] args) throws RunnerException {
