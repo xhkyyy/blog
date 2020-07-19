@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"unicode"
 )
@@ -150,7 +151,10 @@ func main() {
 	}()
 
 	list := findMarkdownFiles(*markdownDir)
-	for _, l := range list {
+	for n, l := range list {
+		if l == newFilePath {
+			continue
+		}
 		lines, err := readLines(l)
 		if err != nil {
 			log.Fatalf("read line: %s", err)
@@ -159,7 +163,9 @@ func main() {
 		if len(title) <= 0 {
 			title = filepath.Base(l)
 		}
-		markdown.WriteString("+ [")
+		// markdown.WriteString("+ ")
+		markdown.WriteString(strconv.Itoa(n + 1))
+		markdown.WriteString(". [")
 		markdown.WriteString(escapeText(title))
 		markdown.WriteString("]")
 		markdown.WriteString("(")
