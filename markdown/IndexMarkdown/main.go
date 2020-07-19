@@ -11,6 +11,8 @@ import (
 	"unicode"
 )
 
+var escapeChars = []byte("\\`*_{}[]()#+-.!:|&<>~")
+
 func readLines(path string) ([]string, error) {
 	file, err := os.Open(path)
 	if err != nil {
@@ -71,8 +73,6 @@ func findMarkdownFiles(path string) []string {
 	return list
 }
 
-var escapeChars = []byte("\\`*_{}[]()#+-.!:|&<>~")
-
 func escapeText(str string) string {
 	if len(str) <= 0 {
 		return str
@@ -91,9 +91,35 @@ func escapeText(str string) string {
 	return escapeBytes.String()
 }
 
+func unescapeText(ob *bytes.Buffer, src []byte) {
+	i := 0
+	for i < len(src) {
+		org := i
+		for i < len(src) && src[i] != '\\' {
+			i++
+		}
+
+		if i > org {
+			ob.Write(src[org:i])
+		}
+
+		if i+1 >= len(src) {
+			break
+		}
+
+		ob.WriteByte(src[i+1])
+		i += 2
+	}
+}
+
 func main() {
+	markdownName := flag.String("name", "", "markdown name")
 	markdownDir := flag.String("d", "", "markdown dir")
 	flag.Parse()
+
+	if len(*markdownName) <= 0 {
+		log.Fatalln("must specify a file name.")
+	}
 
 	if _, err := os.Stat(*markdownDir); err != nil {
 		log.Fatalf("parse:\n %s \n %s", err)
@@ -101,7 +127,7 @@ func main() {
 
 	var markdown bytes.Buffer
 	markdown.WriteString("# 文档列表\n\n")
-	newFilePath := filepath.Join(*markdownDir, "X.md")
+	newFilePath := filepath.Join(*markdownDir, strings.TrimSpace(*markdownName))
 	var file *os.File
 	var err error
 	if _, err = os.Stat(newFilePath); os.IsNotExist(err) {
