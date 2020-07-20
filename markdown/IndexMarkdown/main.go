@@ -37,13 +37,13 @@ func getMarkdownTitle(lines []string) string {
 		}
 
 		var arr [3]rune
-		var index int
+		index := 0
 		var c rune
 		for index, c = range line {
-			arr[index] = c
 			if index >= 2 {
 				break
 			}
+			arr[index] = c
 		}
 
 		start := 0
