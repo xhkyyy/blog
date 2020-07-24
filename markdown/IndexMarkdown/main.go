@@ -114,7 +114,7 @@ func unescapeText(ob *bytes.Buffer, src []byte) {
 }
 
 func main() {
-	markdownName := flag.String("name", "", "markdown name")
+	markdownName := flag.String("f", "", "markdown name")
 	markdownDir := flag.String("d", "", "markdown dir")
 	flag.Parse()
 
