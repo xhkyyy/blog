@@ -18,6 +18,9 @@ public class Singleton3 {
      * 2）确保在多线程环境下，其它线程能够立即看到 instance 值的变化
      */
     private volatile static Singleton3 instance = null;
+    
+    private Singleton3() {
+    }
 
     public static Singleton3 getInstance() {
 
