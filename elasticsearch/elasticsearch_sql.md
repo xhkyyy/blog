@@ -46,8 +46,7 @@ curl -XPOST "域名/_sql?format=json" -H 'Content-Type: application/json' -d'{
 	1. 仅支持有限的简单子查询
 	2. 不支持子查询中包含：group by、having
 8. 不支持在 having 时使用 FIRST、LAST 函数
-9. group by 不能是时间类型的字段
-10. SQL column 必须包含在 _source 中，否则查询不出来（这些类型除外 keyword、date、scaled_float、geo_point、geo_shape）
+9. SQL column 必须包含在 _source 中，否则查询不出来（这些类型除外 keyword、date、scaled_float、geo_point、geo_shape）
 
 
 
