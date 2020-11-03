@@ -18,13 +18,11 @@
 ```json
 DELETE my_index
 
-GET my_index
-
 PUT my_index
 {
   "mappings": {
     "properties": {
-      "my_join_field": { 
+      "my_join_field": {
         "type": "join",
         "relations": {
           "question": "answer" 
@@ -73,7 +71,7 @@ PUT my_index/_doc/4?routing=1&refresh
 GET my_index/_search
 {
   "query": {
-    "parent_id": { 
+    "parent_id": {
       "type": "answer",
       "id": "1"
     }
@@ -98,4 +96,50 @@ GET my_index/_search
   }
 }
 
+```
+
+
+**nested**
+
+```json
+DELETE my_index
+
+PUT my_index/_doc/1
+{
+  "group" : "fans",
+  "user" : [ 
+    {
+      "first" : "John",
+      "last" :  "Smith"
+    },
+    {
+      "first" : "Alice",
+      "last" :  "White"
+    }
+  ]
+}
+
+GET my_index/_search
+{
+  "query": {
+    "nested": {
+      "path": "user",
+      "query": {
+        "bool": {
+          "must": [
+            { "match": { "user.first": "Alice" }},
+            { "match": { "user.last":  "White" }} 
+          ]
+        }
+      },
+      "inner_hits": { 
+        "highlight": {
+          "fields": {
+            "user.first": {}
+          }
+        }
+      }
+    }
+  }
+}
 ```
