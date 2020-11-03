@@ -4,9 +4,14 @@
 
 ### 用途
 
-> 父子和嵌套场景下，允许返回不同范围内的匹配的文档
+> parent/child 和 nested 场景下，允许返回真正匹配关联关系的文档
 
-通过在嵌套、has_child、has_parent 查询和过滤器上定义 inner_hits 来返回不同范围内的数据。
+通过在 nested、has_child、has_parent 查询和过滤器上定义 inner_hits 来返回不同范围内的数据。
+
+也即是：
+
+1. 对于 parent/child，当你根据 parent 查询 child 的时候，可以把 parent、child 的 doc 一并返回，反之亦然。
+2. 对于 nested，将
 
 
 ```json
