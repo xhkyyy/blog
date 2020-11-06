@@ -4,7 +4,7 @@
 
 1. 原索引(source)必须要启用 _source
 2. Reindex 不会同步 settings、mappings、shard counts、replicas，所以，需要先创建和配置目标索引
-3. Reindex 获取的是索引的快照
+3. Reindex 获取的是索引的快照(scroll)
 
 ### version_type
 
@@ -57,6 +57,34 @@ curl -X POST "localhost:9200/_reindex?pretty&wait_for_completion=false" -H 'Cont
   }
 }
 '
+```
+
+### Reindex 多个索引
+
+```shell
+for index in 'index1' 'index2' 'index3'; do
+  curl -HContent-Type:application/json -XPOST localhost:9200/_reindex?pretty -d'{
+    "source": {
+      "index": "'$index'"
+    },
+    "dest": {
+      "index": "'$index'-reindexed"
+    }
+  }'
+done
+```
+
+### Throttling
+
+设置 `requests_per_second` 任何正数启用 Throttling.
+禁用 Throttling，则设置 `requests_per_second=-1`.
+
+`requests_per_second` 可以通过 `_rethrottle API` 在 Reindex 过程中调整它的大小.
+
+如果增大`requests_per_second`的值(加速)，会立即生效，而如果减少它的值(减速)，则不会立即生效，需要下一个 batch 才会生效.
+
+```shell
+curl -X POST "localhost:9200/_reindex/${task ID}/_rethrottle?requests_per_second=-1&pretty"
 ```
 
 
