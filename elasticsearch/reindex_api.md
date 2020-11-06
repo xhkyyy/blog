@@ -1,6 +1,6 @@
 # Reindex API
 
-### 知识点
+### 注意
 
 1. 原索引(source)必须要启用 _source
 2. Reindex 不会同步 settings、mappings、shard counts、replicas，所以，需要先创建和配置目标索引
@@ -42,7 +42,22 @@ curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json
 '
 ```
 
+### 异步运行 Reindex
 
+在 Query parameters 中设置`wait_for_completion=false`，将异步执行 Reindex.
+返回值中将包含 task id，通过 [task API](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/tasks.html) 可以查询任务执行状态.
+
+```json
+curl -X POST "localhost:9200/_reindex?pretty&wait_for_completion=false" -H 'Content-Type: application/json' -d'
+{
+ "conflicts": "proceed",
+  "source": {
+  },
+  "dest": {
+  }
+}
+'
+```
 
 
 
