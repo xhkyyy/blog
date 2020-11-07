@@ -334,6 +334,10 @@ script
 
 ### 13.Reindex from multiple indices
 
+这种情况下，要格外注意文档 ID 产生冲突(重复)的情况.
+
+如果文档 ID 相同，_最后_更新的文档将有效.
+
 
 ```shell
 curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json' -d'
