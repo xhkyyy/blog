@@ -6,7 +6,7 @@
 
 1. 原索引(source)必须要启用 _source
 2. Reindex 不会同步 settings、mappings、shard counts、replicas，所以，需要先创建和配置目标索引
-3. Reindex 内部使用 scroll 获取文档
+    3. Reindex 内部使用 scroll 获取文档
 4. 不同的集群之间也可以 Reindex
 5. 支持多个 source 索引到 1 个目标索引
 
@@ -185,7 +185,7 @@ curl -X POST "localhost:9200/_reindex?slices=auto&refresh&pretty" -H 'Content-Ty
 '
 ```
 
-### Reindex routing
+### 9.Reindex routing
 
 支持3 种 `routing`.
 
@@ -212,7 +212,7 @@ curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json
 '
 ```
 
-### batch size
+### 10.batch size
 
 默认，scroll size 是 1000.
 
@@ -233,7 +233,7 @@ curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json
 '
 ```
 
-### pipeline
+### 11.pipeline
 
 Reindex 时，也可以使用 pipline.
 
@@ -251,7 +251,7 @@ curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json
 '
 ```
 
-### 参数汇总
+### 12.参数汇总
 
 **Query parameters**
 
@@ -331,5 +331,35 @@ script
     lang
         (Optional, enum) The script language: painless, expression, mustache, java. For more information, see Scripting.
 ```
+
+### 13.Reindex from multiple indices
+
+
+```shell
+curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json' -d'
+{
+  "source": {
+    "index": ["twitter", "blog"]
+  },
+  "dest": {
+    "index": "all_together"
+  }
+}
+'
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
