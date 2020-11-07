@@ -6,8 +6,9 @@
 
 1. 原索引(source)必须要启用 _source
 2. Reindex 不会同步 settings、mappings、shard counts、replicas，所以，需要先创建和配置目标索引
-3. Reindex 获取的是索引的快照(scroll)
+3. Reindex 内部使用 scroll 获取文档
 4. 不同的集群之间也可以 Reindex
+5. 支持多个 source 索引到 1 个目标索引
 
 ### 2.version_type
 
