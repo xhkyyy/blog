@@ -352,18 +352,155 @@ curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json
 '
 ```
 
+### 14.Reindex select fields with a source filter
 
 
 
+```shell
+curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json' -d'
+{
+  "source": {
+    "index": "twitter",
+    "_source": ["user", "_doc"]
+  },
+  "dest": {
+    "index": "new_twitter"
+  }
+}
+'
+```
+
+
+### 15.Reindex to change the name of a field
+
+
+```shell
+
+# Reindex 时，将 flag “重命名”为 tag.
+
+curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json' -d'
+{
+  "source": {
+    "index": "test"
+  },
+  "dest": {
+    "index": "test2"
+  },
+  "script": {
+    "source": "ctx._source.tag = ctx._source.remove(\"flag\")"
+  }
+}
+'
+```
+
+### 16.动态设置 dest 索引的名称
+
+```shell
+
+# 原索引：metricbeat-2016.05.31
+# 目标索引，将为：metricbeat-2016.05.31-1
+
+curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json' -d'
+{
+  "source": {
+    "index": "metricbeat-*"
+  },
+  "dest": {
+    "index": "metricbeat"
+  },
+  "script": {
+    "lang": "painless",
+    "source": "ctx._index = \u0027metricbeat-\u0027 + (ctx._index.substring(\u0027metricbeat-\u0027.length(), ctx._index.length())) + \u0027-1\u0027"
+  }
+}
+'
+```
+
+
+### 17.Extract a random subset of an index
+
+```shell
+curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json' -d'
+{
+  "max_docs": 10,
+  "source": {
+    "index": "twitter",
+    "query": {
+      "function_score" : {
+        "query" : { "match_all": {} },
+        "random_score" : {}
+      }
+    },
+    "sort": "_score"    
+  },
+  "dest": {
+    "index": "random_twitter"
+  }
+}
+'
+
+_reindex defaults to sorting by _doc so random_score will not have any effect unless you override the sort to _score.
+```
+
+### 18.Modify documents during reindexing
 
 
 
+```shell
+curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json' -d'
+{
+  "source": {
+    "index": "twitter"
+  },
+  "dest": {
+    "index": "new_twitter",
+    "version_type": "external"
+  },
+  "script": {
+    "source": "if (ctx._source.foo == \u0027bar\u0027) {ctx._version++; ctx._source.remove(\u0027foo\u0027)}",
+    "lang": "painless"
+  }
+}
+'
+```
 
+**ctx.op**
 
+1. noop：通过脚本决定该文档无需在目标索引中创建
+2. delete：通过脚本决定从目标索引中删除该索引
 
+可以通过脚本改变的值：
 
+1. _id
+2. _index
+3. _version：设置 null 或从 ctx map 中删除，将直接覆盖已有文档
+4. _routing
 
+### 19.Reindex from remote
 
+**注意不支持 manual or automatic slicing**
+
+```shell
+curl -X POST "localhost:9200/_reindex?pretty" -H 'Content-Type: application/json' -d'
+{
+  "source": {
+    "remote": {
+      "host": "http://otherhost:9200",
+      "username": "user",
+      "password": "pass"
+    },
+    "index": "source",
+    "query": {
+      "match": {
+        "test": "data"
+      }
+    }
+  },
+  "dest": {
+    "index": "dest"
+  }
+}'
+```
 
 
 
