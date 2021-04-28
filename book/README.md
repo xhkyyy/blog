@@ -22,9 +22,7 @@
 |                                                              | [gRPC与云原生应用开发 (豆瓣) (douban.com)](https://book.douban.com/subject/35309194/) | 京东电子书                                                   |       |
 | Knative in Action                                            |                                                              | 还没有看到出版                                               |       |
 | UNIX传奇                                                     | [UNIX传奇 (豆瓣) (douban.com)](https://book.douban.com/subject/35292726/) | 只有实体书                                                   |       |
-| 网飞传奇                                                     | [网飞传奇 (豆瓣) (douban.com)](https://book.douban.com/subject/25800025/) |                                                              | ★★★★  |
-|                                                              |                                                              |                                                              |       |
-| 解密 Instagram                                               | [解密 Instagram (豆瓣) (douban.com)](https://book.douban.com/subject/35252483/) |                                                              | ★★★★  |
+|                                                              | [Learning Serverless (豆瓣) (douban.com)](https://book.douban.com/subject/34973913/) |                                                              |       |
 |                                                              |                                                              |                                                              |       |
 |                                                              |                                                              |                                                              |       |
 |                                                              |                                                              |                                                              |       |
