@@ -2,7 +2,7 @@
 
 
 
-| 书名                                                         | 豆瓣地址                                                     | 电子书地址                                                   | 评分  |
+| 书名                                                         | 豆瓣地址                                                     | 电子书地址                                                   | 读后感 |
 | ------------------------------------------------------------ | :----------------------------------------------------------- | ------------------------------------------------------------ | ----- |
 | 深入浅出Serverless                                           | [深入浅出Serverless (豆瓣) (douban.com)](https://book.douban.com/subject/30465267/) | [深入浅出Serverless：技术原理与应用实践-陈耿-微信读书 (qq.com)](https://weread.qq.com/web/reader/58332880716a4e645835c83) | ★★    |
 | Kubernetes Patterns                                          | [Kubernetes Patterns (豆瓣) (douban.com)](https://book.douban.com/subject/33393680/) | 实体书                                                       | ★★★★★ |
