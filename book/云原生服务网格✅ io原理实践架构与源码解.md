@@ -2,6 +2,8 @@
 
 > https://book.douban.com/subject/34438220/?dt_dapp=1
 
+***原书使用的 Istio 有些过时了，有些组件，如 Mixer 已经被移除***
+
 + 补齐了对k8s的缺失短板：熔断限流、动态路由、调用链路追踪等功能
 + 控制面和数据面都运行在k8s中
 + 网格外的服务也加入到网格内治理的方式是使用ServiceEntry和Egress Gateway
