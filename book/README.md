@@ -25,7 +25,7 @@
 | 高效能人士的七个习惯 | [高效能人士的七个习惯 (豆瓣) (douban.com)](https://book.douban.com/subject/5325618/) | 微信读书 |       |
 | SaaS创业路线图：to B产品、营销、运营方法论及实战案例解读 | [SaaS创业路线图：to B产品、营销、运营方法论及实战案例解读 (豆瓣) (douban.com)](https://book.douban.com/subject/35079444/) | 微信读书 |       |
 | 可伸缩架构（第2版）：云环境下的高可用与风险管理 | [可伸缩架构（第2版）：云环境下的高可用与风险管理 (豆瓣) (douban.com)](https://book.douban.com/subject/35178755/) | 微信读书 |       |
-| Rust权威指南 |                                                              |                                                              |       |
+| Rust权威指南 | [Rust权威指南 (豆瓣) (douban.com)](https://book.douban.com/subject/35081743/) | 微信读书 |       |
 |                                                              |                                                              |                                                              |       |
 |                                                              |                                                              |                                                              |       |
 |                                                              |                                                              |                                                              |       |
