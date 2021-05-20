@@ -23,7 +23,7 @@
 | Knative in Action                                            |                                                              | 还没有看到出版                                               |       |
 | UNIX传奇                                                     | [UNIX传奇 (豆瓣) (douban.com)](https://book.douban.com/subject/35292726/) | 只有实体书                                                   |       |
 |                                                              | [Learning Serverless (豆瓣) (douban.com)](https://book.douban.com/subject/34973913/) |                                                              |       |
-|                                                              |                                                              |                                                              |       |
+| 云原生基础架构 | [云原生基础架构 (豆瓣) (douban.com)](https://book.douban.com/subject/30388782/) | 微信读书 |       |
 |                                                              |                                                              |                                                              |       |
 |                                                              |                                                              |                                                              |       |
 |                                                              |                                                              |                                                              |       |
