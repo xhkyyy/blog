@@ -11,10 +11,10 @@
 | 解密 Instagram                                               | [解密 Instagram (豆瓣) (douban.com)](https://book.douban.com/subject/35252483/) | 微信读书 | ★★★★  |
 | 微服务架构设计模式                                           | [微服务架构设计模式 (豆瓣) (douban.com)](https://book.douban.com/subject/33425123/) | 实体书                                                       | ★★★★★ |
 | ANTLR 4权威指南                                              | [ANTLR 4权威指南 (豆瓣) (douban.com)](https://book.douban.com/subject/27082372/) | 京东电子书                                                   | ★★★★ |
+| 云原生基础架构 | [云原生基础架构 (豆瓣) (douban.com)](https://book.douban.com/subject/30388782/) | 微信读书 | ★★<br />翻译的实在是X |
 | 云原生服务网格Istio：原理、实践、架构与源码解析              | [云原生服务网格Istio：原理、实践、架构与源码解析 (豆瓣) (douban.com)](https://book.douban.com/subject/34438220/) | 京东电子书                                                   | ★★ |
 | 阅读与写作讲义                                               | [吴军阅读与写作讲义 (豆瓣) (douban.com)](https://book.douban.com/subject/35426741/) | 实体书                                                       | 在读 |
 | 这就是OKR                                                    | https://book.douban.com/subject/30396635/                    | 微信读书 | 在读 |
-| 云原生基础架构 | [云原生基础架构 (豆瓣) (douban.com)](https://book.douban.com/subject/30388782/) | 微信读书 | 在读 |
 | 云原生 : 运用容器、函数计算和数据构建下一代应用 | https://book.douban.com/subject/35069167/                    | 微信读书 |       |
 | 数据密集型应用系统设计                                       | [数据密集型应用系统设计 (豆瓣) (douban.com)](https://book.douban.com/subject/30329536/) | 只有实体书                                                   |       |
 | 气候经济与人类未来 : 比尔·盖茨给世界的解决方案               | [气候经济与人类未来 (豆瓣) (douban.com)](https://book.douban.com/subject/35396007/) | 只有实体书                                                   |       |
