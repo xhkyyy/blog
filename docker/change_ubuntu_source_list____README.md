@@ -12,7 +12,10 @@ RUN apt-get update
 
 
 
-执行下列命令，防止出现类似这样的错误：`buster-updates InRelease: At least one invalid signature was encountered.`
+执行下列命令，防止出现类似这样的错误：
+
++ `buster-updates InRelease: At least one invalid signature was encountered.`
++ `Failed to fetch .../dists/buster/InRelease Undetermined Error`
 
 ```
  docker image prune -f
