@@ -1,6 +1,6 @@
 # 文档列表
 
-1. \#\#\# MapReduce [6.824/1.introduction.md](6.824/1.introduction.md)
+1. base paxos 共识过程 [distributed_consensus_algorithm/paxos/README-base-paxos-consensus.md](distributed_consensus_algorithm/paxos/README-base-paxos-consensus.md)
 
 2. http\://nil\.csail\.mit\.edu/6\.824/2020/schedule\.html [6.824/README.md](6.824/README.md)
 
@@ -76,7 +76,7 @@
 
 39. 陷阱 [database/trap.md](database/trap.md)
 
-40. base paxos 共识过程 [distributed_consensus_algorithm/paxos/README-base-paxos-consensus.md](distributed_consensus_algorithm/paxos/README-base-paxos-consensus.md)
+40. MapReduce [6.824/1.introduction.md](6.824/1.introduction.md)
 
 41. README\.md [distributed_consensus_algorithm/quorum/README.md](distributed_consensus_algorithm/quorum/README.md)
 
