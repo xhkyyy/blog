@@ -76,11 +76,11 @@
 
 39. 陷阱 [database/trap.md](database/trap.md)
 
-40. base paxos 共识过程 [distributed consensus algorithm/paxos/README-base-paxos-consensus.md](distributed consensus algorithm/paxos/README-base-paxos-consensus.md)
+40. base paxos 共识过程 [distributed_consensus_algorithm/paxos/README-base-paxos-consensus.md](distributed_consensus_algorithm/paxos/README-base-paxos-consensus.md)
 
-41. README\.md [distributed consensus algorithm/quorum/README.md](distributed consensus algorithm/quorum/README.md)
+41. README\.md [distributed_consensus_algorithm/quorum/README.md](distributed_consensus_algorithm/quorum/README.md)
 
-42. README\.md [distributed consensus algorithm/raft/README.md](distributed consensus algorithm/raft/README.md)
+42. README\.md [distributed_consensus_algorithm/raft/README.md](distributed_consensus_algorithm/raft/README.md)
 
 43. DNS [dns/README.md](dns/README.md)
 
